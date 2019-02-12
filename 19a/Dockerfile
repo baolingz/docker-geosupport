@@ -8,12 +8,12 @@ RUN apt-get update\
 
 WORKDIR /var/geocode
 
-RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/linux_geo18d_184.zip\
+RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/linux_geo19a_191.zip\
     && unzip *.zip\
     && rm *.zip
 
-ENV GEOFILES=/var/geocode/version-18d_18.4/fls/
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-18d_18.4/lib/
+ENV GEOFILES=/var/geocode/version-19a_19.1/fls/
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-19a_19.1/lib/
 
 RUN pip install --upgrade pip\
     && pip install asyncio pandas sqlalchemy psycopg2-binary nest-asyncio uvloop python-geosupport usaddress
