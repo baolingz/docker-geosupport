@@ -6,6 +6,11 @@ RUN apt-get update\
     git\ 
     unzip
 
+
+COPY requirements.txt /requirements.txt
+
+RUN pip install -r requirements.txt
+
 WORKDIR /var/geocode
 
 RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-data/linux_geo19a_191.zip\
@@ -16,6 +21,6 @@ ENV GEOFILES=/var/geocode/version-19a_19.1/fls/
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-19a_19.1/lib/
 
 RUN pip install --upgrade pip\
-    && pip install asyncio pandas sqlalchemy psycopg2-binary nest-asyncio uvloop python-geosupport usaddress
+    && pip install asyncio pandas sqlalchemy psycopg2-binary nest-asyncio uvloop python-geosupport usaddress xlrd
 
 WORKDIR /
