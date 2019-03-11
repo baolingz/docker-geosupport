@@ -17,9 +17,11 @@ RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-dat
 ENV GEOFILES=/var/geocode/version-18d_18.4/fls/
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-18d_18.4/lib/
 
+
+WORKDIR /
 COPY requirements.txt /requirements.txt
 
 RUN pip install --upgrade pip\
     && pip install -r requirements.txt
 
-WORKDIR /
+
