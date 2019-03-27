@@ -1,4 +1,6 @@
-FROM python:3
+FROM jupyter/base-notebook
+
+USER root
 
 RUN apt-get update\ 
     && apt-get install -y \
@@ -15,11 +17,12 @@ RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-dat
 ENV GEOFILES=/var/geocode/version-18d_18.4/fls/
 ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-18d_18.4/lib/
 
+USER $NB_UID
 
-WORKDIR /
-COPY requirements.txt /requirements.txt
-
+WORKDIR /home/jovyan/work
+COPY requirements.txt /home/jovyan/work/requirements.txt
 
 RUN pip install --upgrade pip\
     && pip install -r requirements.txt
 
+EXPOSE 8888
