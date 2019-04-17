@@ -25,4 +25,7 @@ COPY requirements.txt /home/jovyan/work/requirements.txt
 RUN pip install --upgrade pip\
     && pip install -r requirements.txt
 
-EXPOSE 8888
+RUN git clone https://github.com/SPTKL/api-geosupport.git
+WORKDIR /home/jovyan/work/api-geosupport
+
+EXPOSE 8888 5000
