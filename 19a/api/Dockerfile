@@ -19,6 +19,4 @@ RUN pip install --upgrade pip\
 RUN git clone https://github.com/SPTKL/api-geosupport.git
 WORKDIR /var/geocode/api-geosupport
 
-RUN python app.py
-
 EXPOSE 5000
