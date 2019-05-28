@@ -6,7 +6,7 @@ Thanks to [python-geosupport](https://github.com/ishiland/python-geosupport) pyt
 
 ## Instructions: 
 1. Make sure you have docker installed 
-2. Docker pull sptkl/docker-geosupport:tagname
+2. Docker pull paulinez20/docker-geosupport:19b
 3. To use through jupyter notebook: 
     ```
     docker run -it --rm -p 8888:8888 paulinez20/docker-geosupport:19b
