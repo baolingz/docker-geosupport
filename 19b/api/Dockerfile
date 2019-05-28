@@ -10,8 +10,8 @@ RUN curl -O https://www1.nyc.gov/assets/planning/download/zip/data-maps/open-dat
     && unzip *.zip\
     && rm *.zip
 
-ENV GEOFILES=/var/geocode/version-19b_19_2/fls/
-ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-19b_19_2/lib/
+ENV GEOFILES=/var/geocode/version-19b_19.2/fls/
+ENV LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/var/geocode/version-19b_19.2/lib/
 
 RUN pip install --upgrade pip\
     && pip install python-geosupport flask 
