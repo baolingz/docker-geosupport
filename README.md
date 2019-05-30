@@ -17,8 +17,8 @@ Thanks to [python-geosupport](https://github.com/ishiland/python-geosupport) pyt
     ```
 5. To run python scrips at your current directory: 
     ```
-    docker run -v `pwd`:/home/jovyan/work/dir_name\
-                -w /home/jovyan/work/dir_nam
-                paulinez20/docker-geosupport: 19b\
-                python geocode.py
+    docker run -itd --name=geosupport\
+         -v `pwd`:/home/jovyan/work/dir_name\
+         -w /home/jovyan/work/dir_nam\
+         paulinez20/docker-geosupport:19b python geocode.py
     ```
